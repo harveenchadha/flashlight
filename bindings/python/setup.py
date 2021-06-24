@@ -63,7 +63,7 @@ class CMakeBuild(build_ext):
         source_dir = str(Path(__file__).absolute().parent.parent.parent)
         use_cuda = "OFF" if check_negative_env_flag("USE_CUDA") else "ON"
         use_kenlm = "OFF" if check_negative_env_flag("USE_KENLM") else "ON"
-        use_mkl = "OFF" if check_negative_env_flag("USE_MKL") else "ON"
+        use_mkl = "OFF"
         backend = "CPU" if check_negative_env_flag("USE_CUDA") else "CUDA"
         cmake_args = [
             "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=" + ext_dir,
