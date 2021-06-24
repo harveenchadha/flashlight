@@ -84,6 +84,8 @@ class CMakeBuild(build_ext):
             "-DCMAKE_INCLUDE_PATH="+ kenlm,
             "-DKENLM_UTIL_LIB="+ kenlm,
             "-DKENLM_INC="+ kenlm,
+            "-DKENLM_ROOT="+ kenlm,
+            "-DKENLM_MODEL_HEADER="+ kenlm,
         ]
         cfg = "Debug" if self.debug else "Release"
         build_args = ["--config", cfg]
