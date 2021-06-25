@@ -142,6 +142,6 @@ class CMakeBuild(build_ext):
 # )
 
 setup(
-    name='wav2letter',
+    name='flashlight',
     scripts=['bin/install.sh'],
 )
