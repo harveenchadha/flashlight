@@ -143,5 +143,23 @@ class CMakeBuild(build_ext):
 
 setup(
     name='flashlight',
+    version="1.0.0",
+    author="Flashlight Contributors",
+    author_email="oncall+fair_speech@xmail.facebook.com",
+    description="Flashlight bindings for python",
+    long_description="",
+    packages=[
+        "flashlight",
+        "flashlight.lib",
+        "flashlight.lib.audio",
+        "flashlight.lib.sequence",
+        "flashlight.lib.text"
+        ],
+    ext_modules=[
+        CMakeExtension("flashlight.lib.audio.feature"),
+        CMakeExtension("flashlight.lib.sequence.criterion"),
+        CMakeExtension("flashlight.lib.text.decoder"),
+        CMakeExtension("flashlight.lib.text.dictionary"),
+    ],
     scripts=['bin/install.sh'],
 )
