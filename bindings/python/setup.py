@@ -162,4 +162,7 @@ setup(
         CMakeExtension("flashlight.lib.text.dictionary"),
     ],
     scripts=['bin/install.sh'],
+    zip_safe=False,
+    license="BSD licensed, as found in the LICENSE file",
+    python_requires=">=3.6",
 )
