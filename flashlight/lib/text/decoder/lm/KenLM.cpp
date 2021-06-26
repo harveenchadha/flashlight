@@ -9,7 +9,7 @@
 
 #include <stdexcept>
 
-// #include <kenlm/lm/model.hh>
+#include "flashlight/kenlm/lm/model.hh"
 
 namespace fl {
 namespace lib {
