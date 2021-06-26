@@ -115,34 +115,8 @@ class CMakeBuild(build_ext):
         subprocess.check_call(
             ["cmake", "--build", "."] + build_args, cwd=self.build_temp
         )
-# setup(
-#     name="flashlight",
-#     version="1.0.0",
-#     author="Flashlight Contributors",
-#     author_email="oncall+fair_speech@xmail.facebook.com",
-#     description="Flashlight bindings for python",
-#     long_description="",
-#     packages=[
-#         "flashlight",
-#         "flashlight.lib",
-#         "flashlight.lib.audio",
-#         "flashlight.lib.sequence",
-#         "flashlight.lib.text"
-#         ],
-#     ext_modules=[
-#         CMakeExtension("flashlight.lib.audio.feature"),
-#         CMakeExtension("flashlight.lib.sequence.criterion"),
-#         CMakeExtension("flashlight.lib.text.decoder"),
-#         CMakeExtension("flashlight.lib.text.dictionary"),
-#     ],
-#     cmdclass={"build_ext": CMakeBuild},
-#     zip_safe=False,
-#     license="BSD licensed, as found in the LICENSE file",
-#     python_requires=">=3.6",
-# )
-
 setup(
-    name='flashlight',
+    name="flashlight",
     version="1.0.0",
     author="Flashlight Contributors",
     author_email="oncall+fair_speech@xmail.facebook.com",
@@ -161,8 +135,34 @@ setup(
         CMakeExtension("flashlight.lib.text.decoder"),
         CMakeExtension("flashlight.lib.text.dictionary"),
     ],
-    scripts=['bin/install.sh'],
+    cmdclass={"build_ext": CMakeBuild},
     zip_safe=False,
     license="BSD licensed, as found in the LICENSE file",
     python_requires=">=3.6",
 )
+
+# setup(
+#     name='flashlight',
+#     version="1.0.0",
+#     author="Flashlight Contributors",
+#     author_email="oncall+fair_speech@xmail.facebook.com",
+#     description="Flashlight bindings for python",
+#     long_description="",
+#     packages=[
+#         "flashlight",
+#         "flashlight.lib",
+#         "flashlight.lib.audio",
+#         "flashlight.lib.sequence",
+#         "flashlight.lib.text"
+#         ],
+#     ext_modules=[
+#         CMakeExtension("flashlight.lib.audio.feature"),
+#         CMakeExtension("flashlight.lib.sequence.criterion"),
+#         CMakeExtension("flashlight.lib.text.decoder"),
+#         CMakeExtension("flashlight.lib.text.dictionary"),
+#     ],
+#     scripts=['bin/install.sh'],
+#     zip_safe=False,
+#     license="BSD licensed, as found in the LICENSE file",
+#     python_requires=">=3.6",
+# )
