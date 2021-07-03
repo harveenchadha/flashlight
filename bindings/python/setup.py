@@ -65,7 +65,7 @@ class CMakeBuild(build_ext):
         use_kenlm = "OFF" if check_negative_env_flag("USE_KENLM") else "ON"
         use_mkl = "OFF"
         backend = "CPU" if check_negative_env_flag("USE_CUDA") else "CUDA"
-        kenlm = "/opt/conda/envs/fairseq2/lib/python3.7/site-packages/kenlm-0.0.0.dist-info"
+#         kenlm = "/opt/conda/envs/fairseq2/lib/python3.7/site-packages/kenlm-0.0.0.dist-info"
         cmake_args = [
             "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=" + ext_dir,
             "-DPYTHON_EXECUTABLE=" + sys.executable,
@@ -80,12 +80,12 @@ class CMakeBuild(build_ext):
             "-DFL_LIBRARIES_USE_CUDA=" + use_cuda,
             "-DFL_LIBRARIES_USE_KENLM=" + use_kenlm,
             "-DFL_LIBRARIES_USE_MKL=" + use_mkl,
-            "-DKENLM_LIB="+ kenlm,
-            "-DCMAKE_INCLUDE_PATH="+ kenlm,
-            "-DKENLM_UTIL_LIB="+ kenlm,
-            "-DKENLM_INC="+ kenlm,
-            "-DKENLM_ROOT="+ kenlm,
-            "-DKENLM_MODEL_HEADER="+ kenlm,
+#             "-DKENLM_LIB="+ kenlm,
+#             "-DCMAKE_INCLUDE_PATH="+ kenlm,
+#             "-DKENLM_UTIL_LIB="+ kenlm,
+#             "-DKENLM_INC="+ kenlm,
+#             "-DKENLM_ROOT="+ kenlm,
+#             "-DKENLM_MODEL_HEADER="+ kenlm,
         ]
         cfg = "Debug" if self.debug else "Release"
         build_args = ["--config", cfg]
